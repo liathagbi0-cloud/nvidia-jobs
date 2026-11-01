@@ -49,7 +49,7 @@ for j in sorted(jobs, key=rank):
     jr = j["externalPath"].rsplit("_", 1)[-1]
     seg = j["externalPath"].split("/")[2] if j["externalPath"].count("/") >= 2 else ""
     country = seg.split("-")[0]
-    msg = f"היי, אשמח לקישור הפניה למשרה:\n{j['title']}\n{j.get('locationsText','')}\nמספר משרה: {jr}"
+    msg = f"היי, אשמח לקישור הפניה למשרה:\n{j['title']}\n{j.get('locationsText','')}\nמספר משרה: {jr}\n{BASE + j['externalPath']}"
     data.append({
         "t": j["title"], "l": j.get("locationsText", ""), "p": j.get("postedOn", ""),
         "c": country, "k": j["cat"], "u": BASE + j["externalPath"],
